@@ -5,3 +5,6 @@ __pycache__/
 model-config.json
 *.pyc
 node_modules/
+*.log
+server.err
+*.zip
