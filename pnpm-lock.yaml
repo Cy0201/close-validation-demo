@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      ace-builds:
+        specifier: 1.43.5
+        version: 1.43.5
+
+packages:
+
+  ace-builds@1.43.5:
+    resolution: {integrity: sha512-iH5FLBKdB7SVn9GR37UgA/tpQS8OTWIxWAuq3Ofaw+Qbc69FfPXsXd9jeW7KRG2xKpKMqBDnu0tHBrCWY5QI7A==}
+
+snapshots:
+
+  ace-builds@1.43.5: {}

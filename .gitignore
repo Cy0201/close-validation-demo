@@ -1,0 +1,7 @@
+.venv/
+data/
+logs/
+__pycache__/
+model-config.json
+*.pyc
+node_modules/

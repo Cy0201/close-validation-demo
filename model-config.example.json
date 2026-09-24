@@ -1,0 +1,7 @@
+{
+  "base_url": "http://127.0.0.1:11434/v1",
+  "model": "填写已部署的模型名称",
+  "api_key": "",
+  "api_format": "openai_chat",
+  "source": "manual"
+}

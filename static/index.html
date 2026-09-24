@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CloseWren · 结账校验</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/plan.css"><link rel="stylesheet" href="/nodes.css"><link rel="stylesheet" href="/workbench.css?v=60"></head><body>
+<button class="sidebar-edge" type="button" aria-label="展开主导航" title="展开主导航">›</button>
+<aside class="sidebar" aria-label="主导航"><div class="brand"><span class="brand-mark">C</span><div><strong>CloseWren</strong><small> CLOSE VALIDATION</small></div><button class="sidebar-toggle" type="button" aria-label="折叠主导航" aria-expanded="true" title="折叠主导航">‹</button></div><nav><button class="nav active" data-page="overview"><span>◫</span><b>总览</b></button><button class="nav" data-page="plan"><span>⌘</span><b>校验方案</b></button><button class="nav" data-page="flow"><span>◇</span><b>运行结果</b></button><button class="nav" data-page="sources"><span>⇧</span><b>数据源</b></button><button class="nav" data-page="ai"><span>✦</span><b>AI 配置</b></button></nav></aside>
+<div class="shell"><header><div><b>本期结账工作区</b><span id="periods"></span></div><div class="header-meta"><span id="table-total">0 张表</span></div></header><main><div class="titlebar"><div><small id="eyebrow">WORKSPACE</small><h1 id="title">结账总览</h1></div><button id="reload" class="button ghost">↻ 刷新</button></div><div id="notice" class="notice hidden"></div>
+<section id="page-overview" class="page"><div class="metrics"><article><span>数据表</span><strong id="metric-tables">—</strong></article><article><span>数据行</span><strong id="metric-rows">—</strong></article><article><span>方案版本</span><strong id="metric-version">—</strong></article><article><span>最近结果</span><strong id="metric-status">—</strong><small id="metric-time"></small></article></div><article class="panel"><div class="panel-head"><div><h2>数据表与校验任务</h2></div><button class="button primary" data-goto="plan">配置方案</button></div><div id="table-overview" class="table-cards"></div></article><article class="panel overview-flow"><div class="panel-head"><div><h2>最近一次校验</h2></div><button class="text-button" data-goto="flow">查看结果 →</button></div><div id="overview-track" class="rule-track"></div></article></section>
+<section id="page-plan" class="page hidden"><div class="plan-banner"></div><div id="plan-editors" class="plan-editors"></div></section>
+<section id="page-flow" class="page hidden"><div class="flow-toolbar"><div><b id="flow-summary">尚未运行</b><span id="flow-subtitle">尚未运行</span></div><button id="run-plan" class="button primary">▶ 运行全部节点</button></div><div id="flow-tracks"></div><div class="flow-grid"><article class="panel"><div class="panel-head"><h2>校验节点</h2></div><div id="task-list"></div></article><article id="task-detail" class="panel run-detail"></article></div></section>
+<section id="page-sources" class="page hidden"><div class="section-toolbar"><div><b>数据表</b></div><button id="add-source" class="button primary">+ 新增数据源</button></div><div id="source-create" class="panel source-create hidden"><div class="form-grid"><label><span>表名称</span><input id="source-name" placeholder="例如：收入成本表"></label><label><span>SQL 表名</span><input id="source-model" placeholder="例如：income_cost"></label><label><span>用途</span><select id="source-role"><option value="validation">校验主表</option><option value="reference">参考表</option></select></label><label><span>文件名包含</span><input id="source-match" placeholder="用于自动选择最新文件"></label></div><div class="source-actions"><button id="create-source" class="button primary">创建数据源</button><button id="cancel-source" class="button ghost">取消</button></div></div><div class="source-grid" id="source-grid"></div><article class="panel source-log"><div class="panel-head"><div><h2>刷新状态</h2></div><span id="refresh-status" class="badge">空闲</span></div><div id="refresh-detail" class="refresh-detail"></div></article></section>
+<section id="page-ai" class="page hidden"><div class="ai-grid"><article class="panel ai-card"><div class="panel-head"><div><h2>当前模型服务</h2><p>配置仅保存在本机，密钥不会回显到浏览器</p></div><span id="ai-status" class="badge">未配置</span></div><div id="ai-current" class="ai-current"></div><div class="form-grid"><label><span>接口协议</span><select id="ai-format"><option value="openai_chat">OpenAI Chat Completions</option><option value="anthropic">Anthropic Messages</option></select></label><label><span>模型名称</span><input id="ai-model" placeholder="例如 qwen3.6"></label><label class="wide"><span>接口地址</span><input id="ai-base-url" placeholder="例如 http://127.0.0.1:3000/v1"></label><label class="wide"><span>API 密钥</span><input id="ai-api-key" type="password" autocomplete="new-password" placeholder="留空则保留已保存的密钥"></label></div><div class="source-actions"><button id="save-ai" class="button primary">保存配置</button><button id="test-ai" class="button ghost">测试连接</button></div><div id="ai-test-result" class="inline-result"></div></article><article class="panel ai-card"><div class="panel-head"><div><h2>从 CC Switch 导入</h2><p>只读识别本机供应商；点击导入后才写入本项目</p></div><button id="refresh-ccswitch" class="button ghost">重新读取</button></div><div id="ccswitch-list" class="provider-list"></div></article></div></section>
+</main></div><div id="toast" class="toast hidden"></div><script src="/vendor/ace.js"></script><script src="/vendor/ext-language_tools.js"></script><script src="/vendor/mode-sql.js"></script><script src="/vendor/theme-tomorrow_night.js"></script><script src="/vendor/sortable.min.js"></script><script src="/app.js?v=workbench63"></script><script src="/drag-ui.js?v=58"></script><script src="/periods.js?v=2"></script></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
